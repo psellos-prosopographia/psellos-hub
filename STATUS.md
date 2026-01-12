@@ -22,9 +22,14 @@
 - M2c included no spec changes; psellos-spec remains pinned.
 
 **Next planned slice: M3a (Narrative layers): NOT STARTED / PROPOSED**
-- Activate the narrative layer toggle.
-- Introduce minimal layer metadata on assertions (via Psellos extension).
-- Emit layer-based indices in the builder.
+- Scope:
+  - Data adds layer marker on assertions.
+  - Builder propagates layer markers and emits layer-based indices.
+  - Web filters assertions by selected layer.
+- Acceptance:
+  - UI switching changes visible assertions.
+  - Deterministic behavior (artifact-driven).
+  - Default view shows `canon`.
 
 **M2b validation evidence**
 - psellos-builder emits dist/manifest.json, dist/persons.json, dist/assertions.json.

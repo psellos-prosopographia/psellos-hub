@@ -11,9 +11,15 @@
 - psellos-builder consumed the demo dataset in psellos-data end-to-end.
 - psellos-builder produced dist/manifest.json with correct counts.
 
-**Next active focus: M1a (CI automation + hardening)**
-- Scope: operationalize the local CLI validation in CI.
-- psellos-spec remains frozen at v0.1.0 for this milestone.
+**M2 (web thin slice): M2 in progress; M2a complete**
+- psellos-web loads psellos-builder dist/manifest.json and renders spec_version, counts (persons, assertions), and person list with ids.
+- Narrative layer toggle stub is present in the UI.
+- No CI; validated via local run / manual verification.
+
+**Next: M2b**
+- Builder will emit dist/persons.json and dist/assertions.json compiled artifacts.
+- Web will use them to show a person detail view (person record + related assertions list).
+- Spec remains pinned (no spec changes planned for M2b).
 
 ## psellos-spec
 **Current version/tag:** v0.1.0
@@ -64,12 +70,14 @@
 **Current version/tag:** v0 (scaffold)
 
 **What works**
-- TODO: placeholder UI shell
+- psellos-web loads psellos-builder dist/manifest.json and renders spec_version, counts, and person list with ids.
+- Narrative layer toggle stub is present in the UI.
+- No CI; validated via local run / manual verification.
 
 **What’s next (top 3)**
-1. TODO: load builder artifacts
-2. TODO: render basic graph view
-3. TODO: add entity panel + layer toggle
+1. TODO: load compiled dist/persons.json and dist/assertions.json
+2. TODO: render person detail view (person record + related assertions list)
+3. TODO: keep spec pinned to current version
 
 **Blockers**
 - TODO: awaiting builder artifacts

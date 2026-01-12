@@ -11,12 +11,20 @@
 - psellos-builder consumed the demo dataset in psellos-data end-to-end.
 - psellos-builder produced dist/manifest.json with correct counts.
 
-**M2 (web thin slice): M2 in progress; M2b complete**
+**M2 (web thin slice): COMPLETE**
 - psellos-web loads psellos-builder dist/manifest.json and renders spec_version, counts (persons, assertions), and person list with ids.
 - Narrative layer toggle stub is present in the UI.
 - No CI; validated via local run / manual verification.
-- Next active slice: **M2c** — psellos-builder emits adjacency indices for assertions; psellos-web consumes them for person detail views.
-- M2c includes no spec changes; psellos-spec remains pinned.
+- M2c complete: psellos-builder emits adjacency indices for assertions; psellos-web consumes them for person detail views.
+- psellos-builder emits assertions_by_person.json (and assertions_by_id.json if present).
+- psellos-web uses these indices for person detail views.
+- Validation via local build + manual verification.
+- M2c included no spec changes; psellos-spec remains pinned.
+
+**Next planned slice: M3a (Narrative layers): NOT STARTED / PROPOSED**
+- Activate the narrative layer toggle.
+- Introduce minimal layer metadata on assertions (via Psellos extension).
+- Emit layer-based indices in the builder.
 
 **M2b validation evidence**
 - psellos-builder emits dist/manifest.json, dist/persons.json, dist/assertions.json.

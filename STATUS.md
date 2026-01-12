@@ -6,8 +6,13 @@
 - Delivered: minimal person entity; parent_of assertion; explicit Psellos extension namespace stub; example payload(s)
 - Validation will be exercised downstream in M1 by psellos-builder.
 
-**Next active focus: M1a (builder validation + trivial artifact emission)**
-- Scope: psellos-builder validates psellos-spec v0.1.0 and emits a minimal compiled artifact.
+**M1 (builder validation + trivial artifact emission): COMPLETE**
+- psellos-builder validated psellos-spec v0.1.0 via a local CLI run (no CI yet).
+- psellos-builder consumed the demo dataset in psellos-data end-to-end.
+- psellos-builder produced dist/manifest.json with correct counts.
+
+**Next active focus: M1a (CI automation + hardening)**
+- Scope: operationalize the local CLI validation in CI.
 - psellos-spec remains frozen at v0.1.0 for this milestone.
 
 ## psellos-spec
@@ -43,15 +48,17 @@
 **Current version/tag:** v0 (scaffold)
 
 **What works**
-- TODO: placeholder build pipeline
+- End-to-end CLI execution validates psellos-spec v0.1.0 against the demo dataset.
+- Schema reference resolution is functional.
+- Manifest generation produces dist/manifest.json with correct counts.
 
 **What’s next (top 3)**
-1. TODO: validate spec v0.1 inputs
-2. TODO: compile artifacts from demo dataset
-3. TODO: emit versioned artifact manifest
+1. TODO: automate validation in CI for repeatable runs
+2. TODO: expand artifact compilation beyond the demo dataset
+3. TODO: emit versioned artifact manifests
 
 **Blockers**
-- TODO: awaiting psellos-spec v0.1
+- TODO: none
 
 ## psellos-web
 **Current version/tag:** v0 (scaffold)

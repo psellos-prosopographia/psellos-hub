@@ -15,6 +15,8 @@
 - psellos-web loads psellos-builder dist/manifest.json and renders spec_version, counts (persons, assertions), and person list with ids.
 - Narrative layer toggle stub is present in the UI.
 - No CI; validated via local run / manual verification.
+- Next active slice: **M2c** — psellos-builder emits adjacency indices for assertions; psellos-web consumes them for person detail views.
+- M2c includes no spec changes; psellos-spec remains pinned.
 
 **M2b validation evidence**
 - psellos-builder emits dist/manifest.json, dist/persons.json, dist/assertions.json.

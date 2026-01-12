@@ -1,16 +1,22 @@
 # Status
 
+## Milestones
+**M0 (Spec v0.1): COMPLETE**
+- Released: psellos-spec v0.1.0
+- Delivered: minimal person entity; parent_of assertion; explicit Psellos extension namespace stub; example payload(s)
+- Validation will be exercised downstream in M1 by psellos-builder.
+
 ## psellos-spec
-**Current version/tag:** v0 (scaffold)
+**Current version/tag:** v0.1.0
 
 **What works**
-- TODO: core model outline placeholder
-- TODO: extension namespace placeholder
+- Minimal person entity and parent_of assertion
+- Explicit Psellos extension namespace stub
+- Example payload(s)
 
 **What’s next (top 3)**
-1. TODO: define v0.1 core entities and relations
-2. TODO: add JSON Schema scaffolding
-3. TODO: draft initial vocabularies
+1. TODO: add JSON Schema scaffolding
+2. TODO: draft initial vocabularies
 
 **Blockers**
 - TODO: confirm SNAP-aligned concept mapping scope

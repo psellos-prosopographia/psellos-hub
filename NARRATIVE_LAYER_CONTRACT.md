@@ -1,4 +1,4 @@
-# Narrative Layer Contract (M3a)
+# Narrative Layer Contract (M4a–M4d)
 
 This document defines the stable contract for narrative layers across Psellos artifacts. It is intentionally minimal and extension-only.
 
@@ -9,6 +9,7 @@ This document defines the stable contract for narrative layers across Psellos ar
 - **Assertion location:** `extensions.psellos.layer` (string)
 - **Semantics:** layer is a filtering tag; do not infer or derive layers at runtime
 - **Determinism:** behavior must be artifact-driven
+- **Optional artifacts:** any additional layer metadata or diagnostics remain extension-scoped and optional (see below)
 
 ## Authoring guide (M3b)
 - **Field:** `extensions.psellos.layer` (string)
@@ -16,6 +17,52 @@ This document defines the stable contract for narrative layers across Psellos ar
 - **Namespace:** flat; exactly one layer per assertion
 - **Naming conventions:** lowercase; use underscores; no spaces; keep stable ids
 - **Semantics:** layer is a filter tag, not a truth claim
+
+## Narrative layer metadata (M4a)
+Layer metadata is optional and extension-scoped. It is intended for UI labeling and ordering only and does **not** change any layer semantics or filtering logic.
+
+**Artifact:** `layers_meta.json` (optional)
+
+**Shape (per entry):**
+```json
+{
+  "id": "canon",
+  "displayName": "Canonical",
+  "description": "Baseline narrative layer",
+  "order": 0,
+  "color": "#4B5563"
+}
+```
+
+**Notes**
+- **UI-only:** metadata affects presentation (labels, ordering, colors), not logic.
+- **Optional:** clients must tolerate missing metadata and fall back to layer ids.
+
+## Relationship typing extension (M4b)
+Relationship typing is an optional, extension-scoped string on assertions. It provides an additional, lightweight classifier for filtering and analytics.
+
+**Field:** `assertion.extensions.psellos.rel` (string, optional)
+
+**Guidance**
+- **Controlled vocabularies recommended (not enforced):** use a small, stable set of values where practical.
+- **Filtering/analytics only:** the field does not change the assertion’s core semantics.
+- **Optional:** absence is valid and should not block ingestion.
+
+Example assertion snippet:
+```json
+{
+  "id": "assertion_002",
+  "type": "related_to",
+  "subject": "person_010",
+  "object": "person_011",
+  "extensions": {
+    "psellos": {
+      "layer": "canon",
+      "rel": "political_alliance"
+    }
+  }
+}
+```
 
 ## Layer compare view (M3c)
 The compare view lets a reader select two layers (A and B) and see how their assertions differ.
@@ -92,6 +139,20 @@ Layer exports allow readers to download deterministic JSON slices of narrative l
 - Manual review and QA of layer contents.
 - Sharing a layer or compare diff with collaborators.
 - Feeding exports into downstream tooling (analysis, reports, or transformation pipelines).
+
+## Diagnostics + stats artifacts (M4c/M4d)
+Diagnostics outputs are optional and extension-scoped. They provide deterministic counts derived from compiled artifacts for validation and quick inspection.
+
+**Artifact:** `layer_stats.json` (optional)
+
+**Shape (high level)**
+- Top-level object containing per-layer stats keyed by layer id.
+- Each layer entry contains numeric counts (for example: assertion totals, entity totals, or other index-derived counts).
+- A totals section may summarize global counts across all layers.
+
+**Determinism requirements**
+- Stats are derived only from assertions and indices emitted by the builder (for example: `assertions_by_layer.json`, `assertions_by_id.json`).
+- No inference or enrichment beyond the compiled artifacts; repeated runs against identical artifacts must be byte-stable.
 
 ## QA checklist (M3b)
 - Fixture dataset includes:

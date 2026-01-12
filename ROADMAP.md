@@ -11,6 +11,7 @@ Acceptance criteria:
 
 ## M1: Builder v0.1 produces compiled artifacts from demo dataset
 Acceptance criteria:
+- M1a is the first slice: builder validation plus minimal artifact emission.
 - Builder pins to psellos-spec v0.1.
 - Demo dataset from psellos-data is validated.
 - Artifacts compiled deterministically.

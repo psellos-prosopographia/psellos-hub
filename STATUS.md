@@ -21,6 +21,11 @@
 - Validation via local build + manual verification.
 - M2c included no spec changes; psellos-spec remains pinned.
 
+**M3b (Narrative layers authoring + QA guidance): IN PROGRESS**
+- Docs landed (authoring + QA checklist).
+- Fixture + checks landed (documented deterministic requirements).
+- First non-canon layer populated (once done in data).
+
 **Next planned slice: M3a (Narrative layers): NOT STARTED / PROPOSED**
 - Scope:
   - Data adds layer marker on assertions.

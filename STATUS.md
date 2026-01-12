@@ -31,6 +31,11 @@
 - Diff semantics are explicit: Added = B\\A, Removed = A\\B.
 - Compare is artifact-driven via assertions_by_layer + assertions_by_id.
 
+**M3e (Layer-scoped exports): IMPLEMENTED**
+- Single-layer exports include assertion IDs and full assertion objects.
+- Compare exports include added/removed assertion IDs.
+- Exports are client-side and spec-agnostic; all data comes from compiled artifacts.
+
 **Next planned slice: M3a (Narrative layers): NOT STARTED / PROPOSED**
 - Scope:
   - Data adds layer marker on assertions.

@@ -17,5 +17,10 @@ Recommended order: psellos-spec → psellos-data → psellos-builder → psellos
   - `/data/assertions_by_layer.json`
   - `/data/layers.json` (if the layers index is exposed by the build)
 
+## Local run / smoke checklist (psellos-web)
+- Verify layer-scoped exports download correctly in dev (single-layer and compare diff exports).
+- Confirm exported filenames match the documented export patterns.
+- Spot-check JSON shapes for IDs-only and full-assertion exports.
+
 ## Non-affiliation
 Psellos is an independent project and is not affiliated with or endorsed by any institution, organization, or initiative.

@@ -6,6 +6,10 @@
 - Delivered: minimal person entity; parent_of assertion; explicit Psellos extension namespace stub; example payload(s)
 - Validation will be exercised downstream in M1 by psellos-builder.
 
+**Next active focus: M1a (builder validation + trivial artifact emission)**
+- Scope: psellos-builder validates psellos-spec v0.1.0 and emits a minimal compiled artifact.
+- psellos-spec remains frozen at v0.1.0 for this milestone.
+
 ## psellos-spec
 **Current version/tag:** v0.1.0
 

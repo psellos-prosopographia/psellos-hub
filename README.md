@@ -8,6 +8,9 @@ The project spans multiple repos:
 - psellos-builder: transforms spec + data into compiled artifacts.
 - psellos-web: consumes artifacts to provide a user-facing experience.
 
+## Review & publication workflow
+See [Review & Publication Workflow](REVIEW_PUBLICATION_WORKFLOW.md) for narrative freezes, citation bundles, narrative changelogs, and review mode usage.
+
 ## Getting started
 Recommended order: psellos-spec → psellos-data → psellos-builder → psellos-web.
 

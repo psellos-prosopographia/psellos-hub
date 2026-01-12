@@ -26,6 +26,11 @@
 - Fixture + checks landed (documented deterministic requirements).
 - First non-canon layer populated (once done in data).
 
+**M3c (Layer compare view): IN PROGRESS**
+- Compare view shows differences between two selected layers.
+- Diff semantics are explicit: Added = B\\A, Removed = A\\B.
+- Compare is artifact-driven via assertions_by_layer + assertions_by_id.
+
 **Next planned slice: M3a (Narrative layers): NOT STARTED / PROPOSED**
 - Scope:
   - Data adds layer marker on assertions.

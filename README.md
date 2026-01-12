@@ -11,5 +11,11 @@ The project spans multiple repos:
 ## Getting started
 Recommended order: psellos-spec → psellos-data → psellos-builder → psellos-web.
 
+## Local run recipe (psellos-web)
+- **Canonical artifact root:** `/data` (mount or copy compiled builder artifacts here).
+- **Expected dev URLs:**
+  - `/data/assertions_by_layer.json`
+  - `/data/layers.json` (if the layers index is exposed by the build)
+
 ## Non-affiliation
 Psellos is an independent project and is not affiliated with or endorsed by any institution, organization, or initiative.

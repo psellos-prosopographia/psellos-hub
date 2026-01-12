@@ -17,6 +17,12 @@ This document defines the stable contract for narrative layers across Psellos ar
 - **Naming conventions:** lowercase; use underscores; no spaces; keep stable ids
 - **Semantics:** layer is a filter tag, not a truth claim
 
+## Layer compare view (M3c)
+The compare view lets a reader select two layers (A and B) and see how their assertions differ.
+
+- **Diff semantics:** Added = `B \\ A`, Removed = `A \\ B`.
+- **Artifact-driven:** comparisons are computed from `assertions_by_layer.json` and resolved via `assertions_by_id.json` (no runtime inference).
+
 Example assertion snippet:
 ```json
 {

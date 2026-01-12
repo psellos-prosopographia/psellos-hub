@@ -11,15 +11,16 @@
 - psellos-builder consumed the demo dataset in psellos-data end-to-end.
 - psellos-builder produced dist/manifest.json with correct counts.
 
-**M2 (web thin slice): M2 in progress; M2a complete**
+**M2 (web thin slice): M2 in progress; M2b complete**
 - psellos-web loads psellos-builder dist/manifest.json and renders spec_version, counts (persons, assertions), and person list with ids.
 - Narrative layer toggle stub is present in the UI.
 - No CI; validated via local run / manual verification.
 
-**Next: M2b**
-- Builder will emit dist/persons.json and dist/assertions.json compiled artifacts.
-- Web will use them to show a person detail view (person record + related assertions list).
-- Spec remains pinned (no spec changes planned for M2b).
+**M2b validation evidence**
+- psellos-builder emits dist/manifest.json, dist/persons.json, dist/assertions.json.
+- dist/assertions.json uses canonical flat endpoint IDs (subject/object are string IDs, not embedded objects).
+- psellos-web loads these artifacts and shows person detail with related assertions.
+- Validated via local run / manual verification (no CI yet).
 
 ## psellos-spec
 **Current version/tag:** v0.1.0
@@ -57,6 +58,8 @@
 - End-to-end CLI execution validates psellos-spec v0.1.0 against the demo dataset.
 - Schema reference resolution is functional.
 - Manifest generation produces dist/manifest.json with correct counts.
+- Builder artifacts contract is stable enough for psellos-web consumption (dist/manifest.json, dist/persons.json, dist/assertions.json).
+- dist/assertions.json emits canonical flat endpoint IDs (subject/object as strings).
 
 **What’s next (top 3)**
 1. TODO: automate validation in CI for repeatable runs
@@ -72,6 +75,8 @@
 **What works**
 - psellos-web loads psellos-builder dist/manifest.json and renders spec_version, counts, and person list with ids.
 - Narrative layer toggle stub is present in the UI.
+- psellos-web loads dist/persons.json and dist/assertions.json and renders person detail with related assertions.
+- Web consumption path is functional for current compiled builder artifacts.
 - No CI; validated via local run / manual verification.
 
 **What’s next (top 3)**

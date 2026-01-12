@@ -22,5 +22,8 @@ Recommended order: psellos-spec → psellos-data → psellos-builder → psellos
 - Confirm exported filenames match the documented export patterns.
 - Spot-check JSON shapes for IDs-only and full-assertion exports.
 
+## Synthetic long-chain test dataset
+The psellos-data repository includes a synthetic long-chain dataset at `datasets/synthetic/long-chain/`. It exists to stress-test deep graph behavior (layering, diffing, and export paths) so contributors can validate long-chain handling without inspecting or depending on real data.
+
 ## Non-affiliation
 Psellos is an independent project and is not affiliated with or endorsed by any institution, organization, or initiative.

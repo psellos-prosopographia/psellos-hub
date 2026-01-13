@@ -1,6 +1,6 @@
 # Psellos Compliance and Milestones
 
-This document defines the normative compliance model for Psellos and the declared milestone ladder (M1–M6). It is implementation-agnostic and reflects the declared state of the ecosystem, with optional extensions governed when present.
+This document defines the normative compliance model for Psellos. Milestone definitions and milestone status records are centralized in `MILESTONES.md` and `MILESTONE_STATUS.md` respectively.
 
 ## Normative Compliance Rules
 
@@ -52,71 +52,9 @@ A DH-minimal compliant system satisfies all **MUST** rules and may omit any **MA
 #### Extended / fictional prosopography support (optional)
 Extended implementations MAY add multiple narrative layers, diff exports, diagnostics, relationship typing, and richer temporal models. These capabilities remain optional to avoid imposing complexity on minimal DH users, but become **MUST (IF PRESENT)** once included.
 
-## Milestones (M1–M6)
+## Milestones
 
-Each milestone defines intent and “done” criteria strictly in terms of the compliance rules above. Status is based only on declared sync reports.
-
-### M1 — DH minimal compliance
-**Intent:** Establish a minimal, deterministic, schema-identified dataset and artifact contract.
-
-**Done when (MUST satisfied):**
-- Persons + assertions present, with stable identifiers.
-- `manifest.json`, `persons.json`, `assertions.json` emitted.
-- `manifest.json` declares `spec_version`.
-- Deterministic, byte-stable outputs.
-- `canon` default layer and `extensions.psellos.layer` location honored.
-
-**Status:** **Declared satisfied** (declared as complete, with manifest spec version present in consumed artifacts).
-
-### M2 — Index-backed read-only consumption
-**Intent:** Provide deterministic adjacency indices for efficient read-only consumption.
-
-**Done when (MUST satisfied):**
-- M1 satisfied.
-- Any emitted indices (e.g., `assertions_by_person.json`, `assertions_by_id.json`) are deterministic, artifact-derived, and reference stable IDs.
-
-**Status:** **Declared satisfied** (indices emitted and consumed as declared).
-
-### M3 — Narrative layering
-**Intent:** Enable narrative layers beyond canon without semantic inference.
-
-**Done when (MUST satisfied):**
-- M1 satisfied.
-- Layers are expressed at `extensions.psellos.layer`.
-- Default `canon` behavior applies when unspecified.
-- Consumers do not infer layers and use indices when present.
-
-**Status:** **Declared satisfied** (layer markers, layer-aware outputs, and layer filtering declared).
-
-### M4 — Layer comparison and diagnostics
-**Intent:** Provide deterministic comparison and diagnostics derived from compiled artifacts.
-
-**Done when (MUST satisfied):**
-- M3 satisfied.
-- Any layer compare outputs and diagnostics are deterministic and artifact-derived.
-
-**Status:** **Declared satisfied** (comparison and diagnostics declared complete).
-
-### M5 — Publication and export readiness
-**Intent:** Provide deterministic, exportable artifacts suitable for review and distribution.
-
-**Done when (MUST satisfied):**
-- M4 satisfied.
-- Deterministic layer exports, diffs, and distribution artifacts are emitted when present.
-
-**Status:** **Declared satisfied** (demo scope declared complete).
-
-### M6 — External data ingestion / real-world validation
-**Intent:** Validate the system on real-world data with deterministic compilation and visualization.
-
-**Done when (MUST satisfied):**
-- M5 satisfied.
-- External data ingestion produces compliant, deterministic compiled artifacts.
-- Real-world datasets are layered, compared, and visualized without changing semantics.
-
-**Status:** **Declared satisfied** (real-world dataset end-to-end declared complete).
-
-**Declaration:** Based on declared sync reports, the ecosystem is considered to have reached **M6 capability**.
+Milestone definitions are centralized in `MILESTONES.md`. Milestone status and declaration records are centralized in `MILESTONE_STATUS.md`.
 
 ## Authority Centralization
 - **psellos-spec** is authoritative for schemas and vocabularies.
@@ -125,4 +63,4 @@ Each milestone defines intent and “done” criteria strictly in terms of the c
 - **psellos-web** is a read-only consumer and defines no data or schema authority.
 
 ## AUTHORITY_INDEX Review
-`AUTHORITY_INDEX.yml` now references this document to anchor compliance and milestone governance.
+`AUTHORITY_INDEX.yml` remains the index of canonical governance documents, including the centralized milestone definition and status records.

@@ -42,6 +42,7 @@ canonical_paths:
   narrative_layer_contract: "NARRATIVE_LAYER_CONTRACT.md"
   decisions_dir: "DECISIONS"
   decisions_readme: "DECISIONS/README.md"
+  gold_standard_dataset: "GOLD_STANDARD_DATASET.md"
 
 raw_urls:
   readme: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/README.md"
@@ -56,6 +57,7 @@ raw_urls:
   narrative_layer_contract: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/NARRATIVE_LAYER_CONTRACT.md"
   decisions_dir: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/DECISIONS"
   decisions_readme: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/DECISIONS/README.md"
+  gold_standard_dataset: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/GOLD_STANDARD_DATASET.md"
 
 authority_rules:
   - "psellos-hub is the source of authority for cross-repo governance."
@@ -63,6 +65,7 @@ authority_rules:
   - "STATUS.md is the current operational truth."
   - "MILESTONES.md defines the normative milestone ladder; MILESTONE_STATUS.md records declarations."
   - "AI_WORKFLOW.md governs how changes should be proposed and recorded."
+  - "GOLD_STANDARD_DATASET.md is the normative compliance exemplar and reference model only; it is not a historical authority."
 
 canonical_order:
   - "README.md"

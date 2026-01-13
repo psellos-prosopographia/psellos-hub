@@ -126,6 +126,7 @@ Milestone requirements are expressed using the normative compliance rules in `GO
 **Guarantees**
 - External data ingestion produces compliant, deterministic compiled artifacts.
 - Real-world datasets can be layered, compared, and visualized without changing semantics.
+- The [gold standard dataset](GOLD_STANDARD_DATASET.md) is referenced as the compliance exemplar for end-to-end validation.
 
 **MUST / MUST-IF-PRESENT conditions**
 - MUST: M5 is satisfied.

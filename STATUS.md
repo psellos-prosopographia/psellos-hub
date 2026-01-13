@@ -2,6 +2,7 @@
 
 ## Milestones
 Milestone definitions are centralized in `MILESTONES.md`, and milestone status records are centralized in `MILESTONE_STATUS.md`.
+The [gold standard dataset](GOLD_STANDARD_DATASET.md) is designated and frozen as a compliance exemplar.
 
 ## psellos-spec
 **Current version/tag:** v0.1.0

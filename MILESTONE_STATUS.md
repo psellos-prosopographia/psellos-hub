@@ -93,6 +93,7 @@ This document records declared milestone status based on existing hub documentat
 **Source of declaration**
 - Undated hub status record (migrated from STATUS.md during centralization; no sync report recorded).
 - Undated hub compliance record (migrated from GOVERNANCE_COMPLIANCE.md during centralization).
+- [GOLD_STANDARD_DATASET.md](GOLD_STANDARD_DATASET.md) (declared exemplar evidence for M6 completion).
 
 **Caveats / notes**
 - Wikidata SPARQL ingestion.

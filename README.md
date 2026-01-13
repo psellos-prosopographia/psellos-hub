@@ -64,5 +64,81 @@ npm run dev
 ## Synthetic long-chain test dataset
 The psellos-data repository includes a synthetic long-chain dataset at `datasets/synthetic/long-chain/`. It exists to stress-test deep graph behavior (layering, diffing, and export paths) so contributors can validate long-chain handling without inspecting or depending on real data.
 
+## Wikidata demo (Komnenoi) / real-world demo
+This end-to-end demo shows Psellos running on real-world Byzantine data while staying within the minimal schema (`minimal.person-parent.v0.1`). It uses a small Komnenoi slice from Wikidata, exercises multiple narrative layers (`canon` vs `editorial_demo`), and demonstrates compare/diff in psellos-web.
+
+### 1) Data acquisition (Wikidata)
+Use WDQS SPARQL to export:
+- **Komnenoi people list** JSON.
+- **Komnenoi parent edges** JSON (split into two smaller queries if WDQS timeouts occur: parents-of-seeds and children-of-seeds).
+
+Recommended raw file locations (source-of-truth, never edited):
+```
+psellos-data/datasets/world/wikidata/raw/komnenoi/
+  wikidata_komnenoi_people.v0.1.json
+  wikidata_komnenoi_parents.v0.1.json
+  wikidata_komnenoi_children.v0.1.json
+```
+
+### 2) Ingestion (psellos-data)
+Run from inside `psellos-data/`:
+```bash
+python -m psellos_data.ingest.wikidata.wikidata_people_and_parent_edges_to_psellos \
+  --people datasets/world/wikidata/raw/komnenoi/wikidata_komnenoi_people.v0.1.json \
+  --edges datasets/world/wikidata/raw/komnenoi/wikidata_komnenoi_parents.v0.1.json \
+  --edges datasets/world/wikidata/raw/komnenoi/wikidata_komnenoi_children.v0.1.json \
+  --output datasets/world/wikidata/komnenoi.person-parent.v0.1.json \
+  --layer canon
+```
+
+Output notes:
+- Produces a Psellos-consumable dataset with `persons` + `parent_of` assertions.
+- For minimal schema compatibility, the person shape must match the schema (some builds require `entity_type`).
+
+### 3) Create a second narrative layer for demo (`editorial_demo`)
+Use the minimal “diff layer” technique:
+- Duplicate one `canon` assertion.
+- Change `extensions.psellos.layer` to `"editorial_demo"`.
+- Ensure the duplicated assertion has a distinct `id` (derive IDs to include the layer).
+
+Intended use: demonstrate competing reconstructions, not a truth claim.
+
+### 4) Build + serve (psellos-builder + psellos-web)
+Run from the monorepo root:
+```bash
+psellos-builder --spec psellos-spec/schema/minimal.person-parent.v0.1.json \
+  psellos-data/datasets/world/wikidata/komnenoi.person-parent.v0.1.json \
+  --dist psellos-builder/dist
+```
+
+Copy artifacts to the web app and run dev:
+```powershell
+Copy-Item psellos-builder/dist/*.json psellos-web/public/data -Force
+```
+
+Then run `npm run dev` in `psellos-web/`.
+
+### 5) Troubleshooting
+**A) WDQS “upstream request timeout”**
+- Use two smaller queries (parents-of-seeds and children-of-seeds) and pass both JSONs via repeated `--edges`.
+
+**B) Schema validation errors for unexpected/required fields**
+- If the schema rejects person fields (e.g., `extensions`, `birth/death`, `citations`), keep the minimal dataset strict.
+- If the schema requires `entity_type` on persons, preserve it.
+
+**C) psellos-web error: “Invalid manifest: missing spec_version string”**
+- Current workaround:
+  - Patch `dist/manifest.json` to include:
+    ```json
+    "spec_version": "minimal.person-parent.v0.1"
+    ```
+  - Re-copy artifacts to the web app.
+- Note this as a known builder/web contract gap pending a builder fix.
+
+### 6) Purpose / narrative framing (for Byzantinists)
+- The demo proves ingestion + layered comparison over real-world data.
+- It is not claiming completeness or authority over PBW.
+- Layers represent alternative claims and support review/publication workflows.
+
 ## Non-affiliation
 Psellos is an independent project and is not affiliated with or endorsed by any institution, organization, or initiative.

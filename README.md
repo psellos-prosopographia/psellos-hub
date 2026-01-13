@@ -11,6 +11,8 @@ The project spans multiple repos:
 - psellos-builder: transforms spec + data into compiled artifacts.
 - psellos-web: consumes artifacts to provide a user-facing experience.
 
+Psellos designates a [gold standard dataset](GOLD_STANDARD_DATASET.md) that demonstrates minimal compliant usage.
+
 ## Review & publication workflow
 See [Review & Publication Workflow](REVIEW_PUBLICATION_WORKFLOW.md) for narrative freezes, citation bundles, narrative changelogs, and review mode usage.
 

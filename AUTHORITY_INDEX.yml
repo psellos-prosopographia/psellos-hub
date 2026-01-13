@@ -1,5 +1,5 @@
 schema_version: "0.1"
-updated_utc: "2026-01-13T03:12:00Z"
+updated_utc: "2026-01-20T00:00:00Z"
 repo: "psellos-prosopographia/psellos-hub"
 raw_base: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main"
 
@@ -32,6 +32,7 @@ interaction_scope:
 canonical_paths:
   readme: "README.md"
   status: "STATUS.md"
+  governance_compliance: "GOVERNANCE_COMPLIANCE.md"
   ai_workflow: "AI_WORKFLOW.md"
   architecture: "ARCHITECTURE.md"
   roadmap: "ROADMAP.md"
@@ -43,6 +44,7 @@ canonical_paths:
 raw_urls:
   readme: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/README.md"
   status: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/STATUS.md"
+  governance_compliance: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/GOVERNANCE_COMPLIANCE.md"
   ai_workflow: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/AI_WORKFLOW.md"
   architecture: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/ARCHITECTURE.md"
   roadmap: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/ROADMAP.md"
@@ -60,6 +62,7 @@ authority_rules:
 canonical_order:
   - "README.md"
   - "STATUS.md"
+  - "GOVERNANCE_COMPLIANCE.md"
   - "AI_WORKFLOW.md"
   - "ARCHITECTURE.md"
   - "ROADMAP.md"

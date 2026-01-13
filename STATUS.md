@@ -21,30 +21,26 @@
 - Validation via local build + manual verification.
 - M2c included no spec changes; psellos-spec remains pinned.
 
-**M3b (Narrative layers authoring + QA guidance): IN PROGRESS**
-- Docs landed (authoring + QA checklist).
-- Fixture + checks landed (documented deterministic requirements).
-- First non-canon layer populated (once done in data).
+**M3 (Narrative layers): COMPLETED**
+- Layer markers in data.
+- Layer-aware builder outputs.
+- Layer filtering in the web UI.
 
-**M3c (Layer compare view): IN PROGRESS**
-- Compare view shows differences between two selected layers.
-- Diff semantics are explicit: Added = B\\A, Removed = A\\B.
-- Compare is artifact-driven via assertions_by_layer + assertions_by_id.
+**M4 (Layer comparison & diagnostics): COMPLETED**
+- Layer compare/diff view.
+- Diagnostics view (counts, distributions, affected persons).
+- Exportable diff summaries.
 
-**M3e (Layer-scoped exports): IMPLEMENTED**
-- Single-layer exports include assertion IDs and full assertion objects.
-- Compare exports include added/removed assertion IDs.
-- Exports are client-side and spec-agnostic; all data comes from compiled artifacts.
+**M5 (Publication / export readiness): COMPLETED (demo scope)**
+- Deterministic artifacts.
+- Exportable layer and diff data.
+- Clear separation of raw data vs compiled artifacts.
+- Note: minimal schema used; citations deferred.
 
-**Next planned slice: M3a (Narrative layers): NOT STARTED / PROPOSED**
-- Scope:
-  - Data adds layer marker on assertions.
-  - Builder propagates layer markers and emits layer-based indices.
-  - Web filters assertions by selected layer.
-- Acceptance:
-  - UI switching changes visible assertions.
-  - Deterministic behavior (artifact-driven).
-  - Default view shows `canon`.
+**M6 (External data ingestion / real-world validation): COMPLETED (Komnenoi demo)**
+- Wikidata SPARQL ingestion.
+- Multi-file edge ingestion support.
+- Real historical dataset (Komnenoi dynasty) built, layered, compared, and visualized end-to-end.
 
 **M2b validation evidence**
 - psellos-builder emits dist/manifest.json, dist/persons.json, dist/assertions.json.
@@ -71,7 +67,8 @@
 **Current version/tag:** v0 (scaffold)
 
 **What works**
-- TODO: placeholder dataset structure
+- Wikidata ingester supports multiple `--edges` inputs.
+- Real-world demo dataset produced (Komnenoi slice).
 
 **What’s next (top 3)**
 1. TODO: seed demo dataset
@@ -90,11 +87,15 @@
 - Manifest generation produces dist/manifest.json with correct counts.
 - Builder artifacts contract is stable enough for psellos-web consumption (dist/manifest.json, dist/persons.json, dist/assertions.json).
 - dist/assertions.json emits canonical flat endpoint IDs (subject/object as strings).
+- Enforces minimal schema for demo scope.
 
 **What’s next (top 3)**
 1. TODO: automate validation in CI for repeatable runs
 2. TODO: expand artifact compilation beyond the demo dataset
 3. TODO: emit versioned artifact manifests
+
+**Known gaps**
+- `manifest.json` must include `spec_version` for web compatibility (temporary manual workaround documented; builder fix pending).
 
 **Blockers**
 - TODO: none
@@ -107,6 +108,8 @@
 - Narrative layer toggle stub is present in the UI.
 - psellos-web loads dist/persons.json and dist/assertions.json and renders person detail with related assertions.
 - Web consumption path is functional for current compiled builder artifacts.
+- Successfully loads and visualizes real-world data.
+- Layer selection, comparison, and diagnostics verified.
 - No CI; validated via local run / manual verification.
 
 **What’s next (top 3)**
@@ -116,3 +119,15 @@
 
 **Blockers**
 - TODO: awaiting builder artifacts
+
+## Cross-repo coordination outcomes (M3–M6)
+- M3–M6 are complete for the intended scope across psellos-spec, psellos-data, psellos-builder, and psellos-web.
+- Komnenoi demo validates end-to-end methodology (layering, comparison, diagnostics, and visualization) without implying scholarly finality.
+- psellos-data: Wikidata ingester supports multiple `--edges` inputs; Komnenoi slice produced.
+- psellos-builder: minimal schema enforced; `manifest.json` needs `spec_version` for web compatibility (temporary manual workaround documented; fix pending).
+- psellos-web: real-world data loaded and visualized; layer selection, comparison, and diagnostics confirmed.
+
+## Known gaps / follow-ups
+- Builder should emit `spec_version` automatically in `manifest.json`.
+- Richer schemas (dates, citations) deferred beyond `minimal.person-parent.v0.1`.
+- Demo represents methodological capability, not authoritative reconstruction.

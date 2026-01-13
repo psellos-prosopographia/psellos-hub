@@ -2,6 +2,9 @@
 
 Psellos is a SNAP-aligned prosopography initiative with an explicit extension for narrative layers, allowing structured persons/roles/relations to coexist with interpretive and temporal storytelling. This hub keeps coordination, governance, and shared planning lightweight across the Psellos ecosystem.
 
+## Authority Index
+Authority Index: [AUTHORITY_INDEX.yml](https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/AUTHORITY_INDEX.yml)
+
 The project spans multiple repos:
 - psellos-spec: core data model, schemas, and controlled vocabularies.
 - psellos-data: curated datasets and fixtures used to validate and exercise the model.

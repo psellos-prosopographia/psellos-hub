@@ -2,6 +2,8 @@
 
 This document formalizes how work is coordinated between the external conversational design space, Codex-injected repository environments, and the Psellos multi-repository project. It defines process and authority, not project content. Refer to existing architecture, roadmap, and decision records for substance.
 
+Canonical entrypoint: `AUTHORITY_INDEX.yml`.
+
 ## 1) Contexts and Roles
 
 - **External conversational design space**: The primary venue for reasoning, critique, and decision-making. It is not Codex, not part of the GitHub organization, and is not a repository. It produces proposed decisions and rationale.

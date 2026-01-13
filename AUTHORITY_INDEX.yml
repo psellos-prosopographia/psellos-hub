@@ -1,0 +1,42 @@
+schema_version: "0.1"
+updated_utc: "2026-01-13T02:47:17Z"
+repo: "psellos-prosopographia/psellos-hub"
+raw_base: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main"
+
+canonical_paths:
+  readme: "README.md"
+  status: "STATUS.md"
+  ai_workflow: "AI_WORKFLOW.md"
+  architecture: "ARCHITECTURE.md"
+  roadmap: "ROADMAP.md"
+  review_publication_workflow: "REVIEW_PUBLICATION_WORKFLOW.md"
+  narrative_layer_contract: "NARRATIVE_LAYER_CONTRACT.md"
+  decisions_dir: "DECISIONS"
+  decisions_readme: "DECISIONS/README.md"
+
+raw_urls:
+  readme: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/README.md"
+  status: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/STATUS.md"
+  ai_workflow: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/AI_WORKFLOW.md"
+  architecture: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/ARCHITECTURE.md"
+  roadmap: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/ROADMAP.md"
+  review_publication_workflow: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/REVIEW_PUBLICATION_WORKFLOW.md"
+  narrative_layer_contract: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/NARRATIVE_LAYER_CONTRACT.md"
+  decisions_dir: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/DECISIONS"
+  decisions_readme: "https://raw.githubusercontent.com/psellos-prosopographia/psellos-hub/main/DECISIONS/README.md"
+
+authority_rules:
+  - "psellos-hub is the source of authority for cross-repo governance."
+  - "Decision records in DECISIONS/ are binding when present."
+  - "STATUS.md is the current operational truth."
+  - "AI_WORKFLOW.md governs how changes should be proposed and recorded."
+
+canonical_order:
+  - "README.md"
+  - "STATUS.md"
+  - "AI_WORKFLOW.md"
+  - "ARCHITECTURE.md"
+  - "ROADMAP.md"
+  - "REVIEW_PUBLICATION_WORKFLOW.md"
+  - "NARRATIVE_LAYER_CONTRACT.md"
+  - "DECISIONS/README.md"

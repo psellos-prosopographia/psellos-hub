@@ -76,3 +76,6 @@ Prior conversational history is not assumed; the hub documents are the source of
 - Don’t assume prior conversation context; always rely on hub records.
 - Don’t let implementation outpace recorded decisions.
 - Don’t restate architecture or roadmap content here; reference them in the hub.
+
+## 7) Demo slice (real-world workflow)
+For a reproducible real-world demo slice (Komnenoi from Wikidata), see the "Wikidata demo (Komnenoi) / real-world demo" section in `README.md`. That walkthrough covers data export, ingestion, layer diffing, build, and web compare steps end-to-end.
